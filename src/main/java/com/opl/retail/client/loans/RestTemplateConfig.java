@@ -4,13 +4,11 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.nio.charset.Charset;
 
-import org.apache.http.client.HttpClient;
 import org.apache.http.client.config.RequestConfig;
 import org.apache.http.impl.client.CloseableHttpClient;
 import org.apache.http.impl.client.HttpClientBuilder;
 import org.apache.http.impl.conn.PoolingHttpClientConnectionManager;
 import org.springframework.context.annotation.Bean;
-import org.springframework.context.annotation.ComponentScan;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
@@ -24,6 +22,8 @@ import org.springframework.web.client.ResponseErrorHandler;
 import org.springframework.web.client.RestClientException;
 import org.springframework.web.client.RestTemplate;
 import org.springframework.web.client.UnknownHttpStatusCodeException;
+
+import org.apache.http.client.HttpClient;
 
 
 // @ComponentScan(basePackages = {"com.capitaworld"})

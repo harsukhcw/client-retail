@@ -1,6 +1,5 @@
 package com.opl.retail.client.loans;
 
-import com.capitaworld.service.loans.utils.CommonUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.http.HttpEntity;
@@ -9,10 +8,11 @@ import org.springframework.http.HttpMethod;
 import org.springframework.http.MediaType;
 import org.springframework.web.client.RestTemplate;
 
-import com.capitaworld.service.loans.exceptions.ExcelException;
-import com.capitaworld.service.loans.model.CMADetailResponse;
-import com.capitaworld.service.loans.model.FrameRequest;
-import com.capitaworld.service.loans.model.LoansResponse;
+import com.opl.retail.api.exceptions.loans.ExcelException;
+import com.opl.retail.api.model.loans.CMADetailResponse;
+import com.opl.retail.api.model.loans.FrameRequest;
+import com.opl.retail.api.model.loans.LoansResponse;
+import com.opl.retail.api.utils.loans.CommonUtils;
 
 public class LoansClient1 {
 
