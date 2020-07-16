@@ -4,7 +4,7 @@
 
   <groupId>com.opl.retail.client</groupId>
   <artifactId>client-retail</artifactId>
-  <version>0.0.1-SNAPSHOT</version>
+  <version>9.0.0</version>
   <packaging>jar</packaging>
 
   <name>client-retail</name>
@@ -22,11 +22,11 @@
 			<artifactId>api-retail</artifactId>
 			<version>9.0.0</version>
 		</dependency>
-		<dependency>
-			<groupId>org.springframework</groupId>
-			<artifactId>spring-web</artifactId>
-			<version>5.2.2.RELEASE</version>
-		</dependency>
+<!--		<dependency>-->
+<!--			<groupId>org.springframework</groupId>-->
+<!--			<artifactId>spring-web</artifactId>-->
+<!--			<version>5.2.2.RELEASE</version>-->
+<!--		</dependency>-->
 		<dependency>
 			<groupId>org.codehaus.jackson</groupId>
 			<artifactId>jackson-mapper-asl</artifactId>
