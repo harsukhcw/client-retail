@@ -1,6 +1,6 @@
 package com.opl.retail.client.reports;
 
-import com.opl.retail.api.model.loans.common.ReportRequest;
+import com.opl.retail.api.model.reports.ReportRequest;
 import org.springframework.http.HttpEntity;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpMethod;
