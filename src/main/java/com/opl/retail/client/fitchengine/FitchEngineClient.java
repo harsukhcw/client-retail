@@ -10,9 +10,9 @@ import org.springframework.http.HttpMethod;
 import org.springframework.http.MediaType;
 import org.springframework.web.client.RestTemplate;
 
-import com.capitaworld.service.fitchengine.exception.FitchEngineException;
-import com.capitaworld.service.fitchengine.model.FitchRequest;
-import com.capitaworld.service.fitchengine.model.FitchResponse;
+import com.opl.retail.api.utils.fitchengine.FitchRequest;
+
+
 
 public class FitchEngineClient {
 

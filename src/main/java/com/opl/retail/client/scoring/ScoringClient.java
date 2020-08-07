@@ -18,8 +18,8 @@ import com.opl.retail.api.model.scoring.ModelParameterResponse;
 import com.opl.retail.api.model.scoring.ScoringRequest;
 import com.opl.retail.api.model.scoring.ScoringResponse;
 import com.opl.retail.api.model.scoring.scoringmodel.ScoringModelReqRes;
-import com.opl.retail.api.utils.scoring.MCLRReqRes;
-import com.opl.retail.api.utils.scoring.REPOReqRes;
+import com.opl.retail.api.service.scoring.MCLRReqRes;
+import com.opl.retail.api.service.scoring.REPOReqRes;
 
 public class ScoringClient {
 

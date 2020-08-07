@@ -12,12 +12,14 @@ import org.springframework.util.LinkedMultiValueMap;
 import org.springframework.util.MultiValueMap;
 import org.springframework.web.client.RestTemplate;
 
-import com.capitaworld.bodmas.domain.BodmasReqRes;
-import com.capitaworld.bodmas.domain.CalculationReqRes;
-import com.capitaworld.bodmas.domain.FolderMasterRequest;
-import com.capitaworld.bodmas.domain.FormulaMasterRequest;
-import com.capitaworld.bodmas.exception.BodmasException;
-import com.capitaworld.bodmas.model.BodmasRequest;
+import com.opl.retail.api.common.bodmas.BodmasException;
+import com.opl.retail.api.common.bodmas.BodmasReqRes;
+import com.opl.retail.api.common.bodmas.BodmasRequest;
+import com.opl.retail.api.common.bodmas.CalculationReqRes;
+import com.opl.retail.api.common.bodmas.FolderMasterRequest;
+import com.opl.retail.api.common.bodmas.FormulaMasterRequest;
+
+
 
 public class BodmasClient {
 
