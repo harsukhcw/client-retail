@@ -139,7 +139,7 @@ public class MatchEngineClient {
 	
 	public MatchResponse saveCorporateMatchesResponse(MatchRequest matchRequest) throws MatchException {
 		
-		String url = matchBaseUrl.concat(SAVE_CORPORATE_MATCHES_DATA_MSME);;
+		String url = matchBaseUrl.concat(SAVE_CORPORATE_MATCHES_DATA_MSME);
 		HttpHeaders headers = new HttpHeaders();
 		headers.setContentType(MediaType.APPLICATION_JSON);
 		HttpEntity<MatchRequest> request1 = new HttpEntity<>(matchRequest, headers);
