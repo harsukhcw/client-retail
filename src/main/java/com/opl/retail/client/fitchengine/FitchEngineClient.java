@@ -10,7 +10,9 @@ import org.springframework.http.HttpMethod;
 import org.springframework.http.MediaType;
 import org.springframework.web.client.RestTemplate;
 
+import com.opl.retail.api.utils.fitchengine.FitchEngineException;
 import com.opl.retail.api.utils.fitchengine.FitchRequest;
+import com.opl.retail.api.utils.fitchengine.FitchResponse;
 
 
 
