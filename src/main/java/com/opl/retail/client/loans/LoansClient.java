@@ -127,6 +127,7 @@ public class LoansClient {
 	private static final String WORKING_CAPITAL_FINAL = "/working_capital/final/save";
 	private static final String UPDATE_LOAN_APPLICATION = "/loan_application/updateLoanApplication";
 	private static final String BASIC_DETAIL_URL = "/fs_retail_profile/profile/get_basic_details";
+	private static final String BASIC_DETAIL_URL_RETAIL = "/fs_retail_profile/profile/get_basic_details_retail";
 	private static final String CO_APPLICANT_BASIC_DETAIL_URL_FOR_CIBIL = "/co_applicant/get_basic_details";
 	private static final String CO_APPLICANT_BASIC_DETAIL_URL = "/co_applicant/profile/get_for_client";
 	private static final String LOAN_BASIC_DETAILS = "/loan_application/getLoanBasicDetails";
@@ -1241,6 +1242,20 @@ public class LoansClient {
 			return restTemplate.exchange(url, HttpMethod.GET, entity, LoansResponse.class).getBody();
 		} catch (Exception e) {
 			logger.error("Exception in getBasicDetail : ",e);
+			throw new ExcelException(e.getCause().getMessage());
+		}
+	}
+	
+	public LoansResponse getBasicDetailRetail(Long userId, Long applicationId) throws ExcelException {
+		String url = loansBaseUrl.concat(BASIC_DETAIL_URL_RETAIL).concat("/" + applicationId + "/" + userId);
+		try {
+			HttpHeaders headers = new HttpHeaders();
+			headers.set(REQ_AUTH, "true");
+			headers.setContentType(MediaType.APPLICATION_JSON);
+			HttpEntity<LoanApplicationRequest> entity = new HttpEntity<>(null, headers);
+			return restTemplate.exchange(url, HttpMethod.GET, entity, LoansResponse.class).getBody();
+		} catch (Exception e) {
+			logger.error("Exception in getBasicDetailRetail : ",e);
 			throw new ExcelException(e.getCause().getMessage());
 		}
 	}
