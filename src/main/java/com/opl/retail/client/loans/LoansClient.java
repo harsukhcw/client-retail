@@ -305,7 +305,7 @@ public class LoansClient {
 	private static final String GET_BANK_RELATION_SALARY = "/sbi_pl/primary/getBankRelationsSalaryDetail";
 	private static final String UPDATE_BANK_RELATION = "/sbi_pl/primary/updateBankRelation/";
 	private static final String BS_CAM_VERSION = "/cam/getCamVersionForBSStandalone/";
-
+	private static final String BASIC_DETAIL_URL_RETAIL = "/fs_retail_profile/profile/get_basic_details_retail";
 	private static final Logger logger = LoggerFactory.getLogger(LoansClient.class);
 	
 	private String loansBaseUrl;
@@ -3141,5 +3141,19 @@ public String getCamVersionForBSStandalone(String  type) throws LoansException {
 		throw new LoansException();
 	}
 }
+
+	public LoansResponse getBasicDetailRetail(Long userId, Long applicationId) throws ExcelException {
+		String url = loansBaseUrl.concat(BASIC_DETAIL_URL_RETAIL).concat("/" + applicationId + "/" + userId);
+		try {
+			HttpHeaders headers = new HttpHeaders();
+			headers.set(REQ_AUTH, "true");
+			headers.setContentType(MediaType.APPLICATION_JSON);
+			HttpEntity<LoanApplicationRequest> entity = new HttpEntity<>(null, headers);
+			return restTemplate.exchange(url, HttpMethod.GET, entity, LoansResponse.class).getBody();
+		} catch (Exception e) {
+			logger.error("Exception in getBasicDetailRetail : ",e);
+			throw new ExcelException(e.getCause().getMessage());
+		}
+	}
 }
 
