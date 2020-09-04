@@ -44,6 +44,7 @@ public class CIBILClient {
 	private static final String PAN_MUST_NOT_BE_NULL = "Pan must not be null";
 	private static final String CIBIL_GET_CMR_SCORE = "/msme/get_cmr_score";
 	private static final String GET_SOFTPING_SCORES = "/get_softping_scores";
+	private static final String GET_CIBIL_VALIDITY = "/get_cibil_validity";
 	private static final String CIBIL_CLIENT_URL = "CIBIL Client URL===>";
 
 	private String cibilBaseUrl;
@@ -477,6 +478,26 @@ public class CIBILClient {
 					.getBody();
 		} catch (Exception e) {
 			logger.error(CibilUtils.EXCEPTION + e.getMessage(), e);
+			throw new CibilException(e.getMessage());
+		}
+	}
+	
+	
+	public CibilResponse getCibilValidity(Long applicationId, Long userId, String pan) throws CibilException {
+		if (CibilUtils.isObjectListNull(applicationId)) {
+			throw new NullPointerException("applicationId and UsesrId Must not be null while Getting Cibil score for MSME Report");
+		}
+		CibilRequest cibilRequest = new CibilRequest();
+		cibilRequest.setApplicationId(applicationId);
+		cibilRequest.setUserId(userId);
+		cibilRequest.setPan(pan);
+		String url = cibilBaseUrl.concat(GET_CIBIL_VALIDITY);
+		logger.info(CIBIL_CLIENT_URL + url);
+		try {
+			return restTemplate.exchange(url, HttpMethod.POST, getHttpHeader(cibilRequest), CibilResponse.class)
+					.getBody();
+		} catch (Exception e) {
+			logger.error(CibilUtils.EXCEPTION+e.getMessage(), e);
 			throw new CibilException(e.getMessage());
 		}
 	}
